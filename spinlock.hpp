@@ -20,7 +20,7 @@ class SpinLock {
   }
 
  private:
-  static inline void SpinLockPause() {
+  void SpinLockPause() {
   #if defined(__GNUC__) && (defined(_i386_) || defined(_x86_64_))
     __asm __volatile("pause");
   #endif
